@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Babe</title>
+<style>
+body {
+  background-color: #A6FF96;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  display: none; /* Initially hide the body content */
+}
+
+p {
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Geometric Sans Serif', 'Poppins', sans-serif;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+#botao1 {
+  position: fixed;
+  top: 78%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+
+#botao1:hover {
+  background-color: #f1f1f1;
+}
+
+#botao2 {
+  position: absolute;
+  left: 39%;
+  top: 74.5%;
+  transition: top 0.3s ease, left 0.3s ease;
+}
+
+#botao2:hover {
+  background-color: #f1f1f1;
+}
+
+#botao2::after {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+#botao2:hover::after {
+  display: block;
+}
+</style>
+</head>
+<body>
+<p>Babe, bati na tayo?</p>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+
+<button id="botao1">YES!</button>
+<button id="botao2">NO:((</button>
+
+<script>
+const button2 = document.getElementById('botao2');
+
+button2.addEventListener('mouseover', function() {
+  const bodyWidth = document.body.clientWidth;
+  const bodyHeight = document.body.clientHeight;
+  const buttonWidth = button2.offsetWidth;
+  const buttonHeight = button2.offsetHeight;
+
+  const newLeft = Math.random() * (bodyWidth - buttonWidth);
+  const newTop = Math.random() * (bodyHeight - buttonHeight);
+
+  this.style.left = `${newLeft}px`;
+  this.style.top = `${newTop}px`;
+});
+
+document.getElementById('botao1').addEventListener('click', function() {
+  alert('YAYYY, TALK US WHEN U HAVE THE TIME!!');   
+});
+
+// Show an alert on page load
+window.onload = function() {
+  alert('Sorry for being prideful, I hope u can forgive me');
+  document.body.style.display = 'block'; // Show the main content
+};
+</script>
+</body>
+</html>
